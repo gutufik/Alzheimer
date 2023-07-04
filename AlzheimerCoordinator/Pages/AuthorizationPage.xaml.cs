@@ -1,4 +1,5 @@
 ﻿
+using AlzheimerCoordinator.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,9 +28,12 @@ namespace AlzheimerCoordinator.Pages
         }
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            var login = tbLogin.Text;
+            var password = pbPassword.Password;
 
-
-            NavigationService.Navigate(new Pages.PatientsListPage());
+            if ((App.User = DataAccess.GetUser(login, password)) != null) {
+                NavigationService.Navigate(new Pages.PatientsListPage());
+            }         
         }
     }
 }

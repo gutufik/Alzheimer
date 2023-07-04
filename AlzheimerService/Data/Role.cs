@@ -7,20 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlzheimerCoordinator.Data
+namespace AlzheimerService.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Request
+    public partial class Role
     {
-        public int Id { get; set; }
-        public Nullable<int> PatientId { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public System.DateTime Date { get; set; }
-        public bool IsOpened { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
+        {
+            this.Users = new HashSet<User>();
+        }
     
-        public virtual Patient Patient { get; set; }
-        public virtual User User { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

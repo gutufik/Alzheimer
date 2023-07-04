@@ -23,6 +23,7 @@ namespace AlzheimerService
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new Pages.AuthorizationPage());
         }
     }
 }

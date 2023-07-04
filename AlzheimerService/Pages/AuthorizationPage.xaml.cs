@@ -1,4 +1,4 @@
-﻿using Alzheimer.Data;
+﻿using AlzheimerService.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Alzheimer.Pages
+namespace AlzheimerService.Pages
 {
     /// <summary>
     /// Interaction logic for AuthorizationPage.xaml
@@ -25,7 +25,6 @@ namespace Alzheimer.Pages
         {
             InitializeComponent();
         }
-
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             var login = tbLogin.Text;
@@ -33,7 +32,7 @@ namespace Alzheimer.Pages
 
             if ((App.User = DataAccess.GetUser(login, password)) != null)
             {
-                NavigationService.Navigate(new Pages.RequestPage());
+                NavigationService.Navigate(new Pages.PatientsListPage());
             }
         }
     }

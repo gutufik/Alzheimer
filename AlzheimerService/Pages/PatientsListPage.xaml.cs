@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlzheimerService.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AlzheimerCoordinator.Data;
 
-namespace AlzheimerCoordinator.Pages
+namespace AlzheimerService.Pages
 {
     /// <summary>
     /// Interaction logic for PatientsListPage.xaml
@@ -27,21 +27,6 @@ namespace AlzheimerCoordinator.Pages
             InitializeComponent();
             Patients = DataAccess.GetPatients();
             lvPatients.ItemsSource = Patients;
-        }
-
-        private void btnMakeRequest_Click(object sender, RoutedEventArgs e)
-        {
-            var patient = (sender as Button).DataContext as Patient;
-
-            if (patient != null)
-            {
-                var request = new Request {
-                    Patient = patient,
-                    Date = DateTime.Today,
-                    User = DataAccess.GetFreeVolunteer()
-                };
-                DataAccess.SaveRequest(request);
-            }
         }
     }
 }

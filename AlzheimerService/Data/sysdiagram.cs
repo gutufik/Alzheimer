@@ -7,20 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlzheimerCoordinator.Data
+namespace AlzheimerService.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Request
+    public partial class sysdiagram
     {
-        public int Id { get; set; }
-        public Nullable<int> PatientId { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public System.DateTime Date { get; set; }
-        public bool IsOpened { get; set; }
-    
-        public virtual Patient Patient { get; set; }
-        public virtual User User { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

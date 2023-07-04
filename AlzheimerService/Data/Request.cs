@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlzheimerCoordinator.Data
+namespace AlzheimerService.Data
 {
     using System;
     using System.Collections.Generic;

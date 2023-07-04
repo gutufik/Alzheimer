@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlzheimerCoordinator.Data
+namespace AlzheimerService.Data
 {
     public class DataAccess
     {
@@ -36,7 +36,7 @@ namespace AlzheimerCoordinator.Data
 
         public static User GetUser(string login, string Password)
         {
-            return AlzheimerEntities.GetContext().Users.FirstOrDefault(x => x.Login == login && x.Password == Password && x.RoleId == 1);
+            return AlzheimerEntities.GetContext().Users.FirstOrDefault(x => x.Login == login && x.Password == Password && x.RoleId == 2);
         }
 
         public static User GetFreeVolunteer()
